@@ -1,3 +1,9 @@
+@TODO: write proper readme for the new fork repo
+=
+
+--------------------------------------------------------------------------------
+
+
     git clone https://github.com/GreenRaccoon23/archdroid-icon-theme.git
 Or, for just the icons:  
 
