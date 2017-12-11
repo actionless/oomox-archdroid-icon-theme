@@ -1,3 +1,15 @@
+Archdroid icon theme generator
+=
+
+Usage
+===
+
+```sh
+./change_color.sh --output droid_test_1 --color 439151
+./change_color.sh -o droid_test_2 -c 5e468c
+```
+
+
 @TODO: write proper readme for the new fork repo
 =
 
