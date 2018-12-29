@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -ueo pipefail
-root="$(readlink -f $(dirname "$0"))"
+root="$(readlink -f "$(dirname "$0")")"
 
 
 print_usage() {
@@ -9,14 +9,14 @@ usage:
 	$0 [-o OUTPUT_THEME_NAME] [-c COLOR] PRESET_NAME_OR_PATH
 
 examples:
-       $0 -o droid_test_3 -c 5e468c
-       $0 monovedek
-       $0 -o my-theme-name ./colors/lcars"
+	$0 -o droid_test_3 -c 5e468c
+	$0 monovedek
+	$0 -o my-theme-name ./colors/lcars"
 	exit 1
 }
 
 
-while [[ $# > 0 ]]
+while [[ $# -gt 0 ]]
 do
 	case ${1} in
 		-h|--help)
@@ -50,9 +50,10 @@ if [[ -z "${THEME:-}" ]] ; then
 		THEME="${OUTPUT_THEME_NAME}"
 	fi
 else
+	# shellcheck disable=SC1090
 	if [[ ${THEME} == */* ]] || [[ ${THEME} == *.* ]] ; then
 		source "$THEME"
-		THEME=$(basename ${THEME})
+		THEME=$(basename "${THEME}")
 	else
 		source "${root}/colors/$THEME"
 	fi
